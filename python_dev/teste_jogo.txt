@@ -1,0 +1,64 @@
+def computador_escolhe_jogada(n , m):
+    computador_remove = 1
+    
+    while computador_remove != m:
+        if (n - computador_remove) % (m + 1) == 0:
+            return computador_remove
+        
+        else:
+            computador_remove += 1
+            
+    return computador_remove
+
+def usuario_escolhe_jogada(n, m):
+    jogada_valida = False
+    
+    while not jogada_valida:
+        jogador_remove = int(input("Quantas peças você vai remover?"))
+        if jogador_remove > m or jogador_remove < 1:
+            
+            print("Epa epa, houve um equívoco! Tente de novo")
+            
+        else:
+            jogada_valida = True
+            
+    return  jogador_remove
+
+def campeonato():
+    rodada = 1
+    while rodada <= 3:
+        print()
+        print("**** Rodada", rodada, "****")
+        print()
+        partida()
+        rodada += 1
+    print()
+    print("Placar: Você 0 x 3 Computador")
+    
+def partida():
+    n = int(input("Quantas peças vão ter no jogo?"))
+    
+    m = int(input("Limite de peças por jogada?"))]
+    
+    vez_computador = False
+    
+    if n % (m + 1) == 0:
+        print()
+        print("Você começa!")
+        
+    else:
+        print()
+        print("Computador começa!")
+        vez_computador = True
+        
+    while n > 0:
+        if vez_computador:
+            computador_remove = computador_escolhe_jogada(n , m)
+            n -= computador_remove
+            if computador_remove == 1:
+                print()
+                print("O computador tirou uma peça")
+            else: 
+                print()
+                print("O computador tirou")
+    
