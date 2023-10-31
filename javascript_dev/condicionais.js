@@ -8,7 +8,8 @@ if (idade >= maiorDeIdade) {
 }
 
 // Média >= 7 (Aprovado)
-// Média < 7 (Reprovado)
+// Média >= 5 (Recuperação)
+// Média < 5 (Reprovado)
 
 const ava1 = 5;
 const ava2 = 3;
